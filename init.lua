@@ -589,9 +589,9 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
-        clangd = {},
+        --clangd = {},
 
-        pyright = {},
+        --pyright = {},
 
         lua_ls = {
           -- cmd = { ... },
