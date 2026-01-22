@@ -78,9 +78,9 @@ vim.opt.confirm = true
 -- Netrw settings:
 vim.g.netrw_keepdir = 0
 vim.g.netrw_banner = 1
---vim.g.netrw_winsize = 30
+vim.g.netrw_winsize = 30
 --vim.g.netrw_browsex_viewer = 'start'
-vim.keymap.set('n', '<leader>e', ':Vexplore<CR>')
+vim.keymap.set('n', '<leader>e', ':Lexplore<CR>')
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -578,9 +578,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -590,6 +588,10 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+
+        clangd = {},
+
+        pyright = {},
 
         lua_ls = {
           -- cmd = { ... },
