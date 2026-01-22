@@ -77,9 +77,10 @@ vim.opt.confirm = true
 
 -- Netrw settings:
 vim.g.netrw_keepdir = 0
-vim.g.netrw_banner = 0
+vim.g.netrw_banner = 1
 --vim.g.netrw_winsize = 30
 --vim.g.netrw_browsex_viewer = 'start'
+vim.keymap.set('n', '<leader>e', ':Vexplore<CR>')
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -790,9 +791,8 @@ require('lazy').setup({
     'sainnhe/gruvbox-material',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('gruvbox-material').setup {
-      }
+      -- load color scheme
+      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
 
@@ -871,12 +871,12 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-   require 'kickstart.plugins.debug',
-   require 'kickstart.plugins.indent_line',
-   require 'kickstart.plugins.lint',
-   require 'kickstart.plugins.autopairs',
-   require 'kickstart.plugins.neo-tree',
-   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
